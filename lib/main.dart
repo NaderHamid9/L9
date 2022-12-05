@@ -50,77 +50,95 @@ class _homePageState extends State<homePage> {
               key: key1,
               child: Column(
                 children: [
-                  TextFormField(
-                    controller: nameController,
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15)),
-                        suffix: Icon(
-                          Icons.person,
-                          color: Colors.blueAccent,
-                        )),
-                    validator: (value) {
-                      if (value!.isEmpty ||
-                          !RegExp(r'^[a-z A-Z]+$').hasMatch(value!)) {
-                        return "Enter corrent name";
-                      } else {
-                        return null;
-                      }
-                    },
+                  Container(
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
+                    child: TextFormField(
+                      controller: nameController,
+                      decoration: InputDecoration(
+                          hintText: "Student Name",
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15)),
+                          suffix: Icon(
+                            Icons.person,
+                            color: Colors.blueAccent,
+                          )),
+                      validator: (value) {
+                        if (value!.isEmpty ||
+                            !RegExp(r'^[a-z A-Z]+$').hasMatch(value!)) {
+                          return "Enter a Correct name";
+                        } else {
+                          return null;
+                        }
+                      },
+                    ),
                   ),
-                  TextFormField(
-                    controller: nameController,
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15)),
-                        suffix: Icon(
-                          Icons.person,
-                          color: Colors.blueAccent,
-                        )),
-                    validator: (value) {
-                      if (value!.isEmpty ||
-                          !RegExp(r'^[a-z A-Z]+$').hasMatch(value!)) {
-                        return "Enter corrent name";
-                      } else {
-                        return null;
-                      }
-                    },
+                  Container(
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
+                    child: TextFormField(
+                      controller: phoneController,
+                      decoration: InputDecoration(
+                          hintText: "Phone number",
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15)),
+                          suffix: Icon(
+                            Icons.phone,
+                            color: Colors.blueAccent,
+                          )),
+                      validator: (value) {
+                        if (value!.isEmpty ||
+                            !RegExp(r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]+$')
+                                .hasMatch(value!)) {
+                          return "Enter a Correct Phone number";
+                        } else {
+                          return null;
+                        }
+                      },
+                    ),
                   ),
-                  TextFormField(
-                    controller: nameController,
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15)),
-                        suffix: Icon(
-                          Icons.person,
-                          color: Colors.blueAccent,
-                        )),
-                    validator: (value) {
-                      if (value!.isEmpty ||
-                          !RegExp(r'^[a-z A-Z]+$').hasMatch(value!)) {
-                        return "Enter corrent name";
-                      } else {
-                        return null;
-                      }
-                    },
+                  Container(
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
+                    child: TextFormField(
+                      controller: emailController,
+                      decoration: InputDecoration(
+                          hintText: "Email Address",
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15)),
+                          suffix: Icon(
+                            Icons.email,
+                            color: Colors.blueAccent,
+                          )),
+                      validator: (value) {
+                        if (value!.isEmpty ||
+                            !RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w]{2,4}')
+                                .hasMatch(value!)) {
+                          return "Enter a Correct Email";
+                        } else {
+                          return null;
+                        }
+                      },
+                    ),
                   ),
-                  TextFormField(
-                    controller: nameController,
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15)),
-                        suffix: Icon(
-                          Icons.person,
-                          color: Colors.blueAccent,
-                        )),
-                    validator: (value) {
-                      if (value!.isEmpty ||
-                          !RegExp(r'^[a-z A-Z]+$').hasMatch(value!)) {
-                        return "Enter corrent name";
-                      } else {
-                        return null;
-                      }
-                    },
+                  Container(
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
+                    child: TextFormField(
+                      controller: nameController,
+                      decoration: InputDecoration(
+                          hintText: "Student Name",
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15)),
+                          suffix: Icon(
+                            Icons.person,
+                            color: Colors.blueAccent,
+                          )),
+                      validator: (value) {
+                        if (value!.isEmpty ||
+                            !RegExp(r'^[a-z A-Z]+$').hasMatch(value!)) {
+                          return "Enter corrent name";
+                        } else {
+                          return null;
+                        }
+                      },
+                    ),
                   ),
                 ],
               ),
