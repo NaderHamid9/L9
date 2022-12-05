@@ -76,6 +76,7 @@ class _homePageState extends State<homePage> {
                     margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
                     child: TextFormField(
                       controller: phoneController,
+                      keyboardType: TextInputType.phone,
                       decoration: InputDecoration(
                           hintText: "Phone number",
                           border: OutlineInputBorder(
@@ -99,6 +100,7 @@ class _homePageState extends State<homePage> {
                     margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
                     child: TextFormField(
                       controller: emailController,
+                      keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                           hintText: "Email Address",
                           border: OutlineInputBorder(
@@ -121,9 +123,11 @@ class _homePageState extends State<homePage> {
                   Container(
                     margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
                     child: TextFormField(
-                      controller: nameController,
+                      controller: passwordController,
+                      keyboardType: TextInputType.visiblePassword,
+                      obscureText: true,
                       decoration: InputDecoration(
-                          hintText: "Student Name",
+                          hintText: "Password",
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15)),
                           suffix: Icon(
@@ -132,8 +136,8 @@ class _homePageState extends State<homePage> {
                           )),
                       validator: (value) {
                         if (value!.isEmpty ||
-                            !RegExp(r'^[a-z A-Z]+$').hasMatch(value!)) {
-                          return "Enter corrent name";
+                            !RegExp(r'^.{15,}$').hasMatch(value!)) {
+                          return "Enter a valid password";
                         } else {
                           return null;
                         }
@@ -146,14 +150,21 @@ class _homePageState extends State<homePage> {
             SizedBox(
               height: 20,
             ),
-            ElevatedButton(
+            Container(
+              margin: EdgeInsets.fromLTRB(320, 0, 0, 0),
+              child: FloatingActionButton(
                 onPressed: () {
                   if (key1.currentState!.validate()) {
                     final snackBar = SnackBar(
                         content: Text('please check your information :( '));
                   }
                 },
-                child: Text("send"))
+                child: Icon(
+                  Icons.arrow_forward,
+                  size: 30,
+                ),
+              ),
+            )
           ]),
         ),
       ),
